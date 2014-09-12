@@ -69,6 +69,8 @@ public class RomManagerActivity extends Graph89ActivityBase
 	private TextView					mNoRomsInstalledTextView	= null;
 	private Button						mAddRomButton				= null;
 	private String						mBrowseText					= null;
+	private String						mCalcTypeStandardTitle				= null;
+
 
 	private CalculatorInstanceHelper	mCalculatorInstances		= null;
 	private AlertDialog					mAddEditdialog				= null;
@@ -157,6 +159,7 @@ public class RomManagerActivity extends Graph89ActivityBase
 		final TableRow calcTypeRow = (TableRow) view.findViewById(R.id.add_rom_calctype_tablerow);
 
 		String windowTitle = null;
+		mCalcTypeStandardTitle = null;
 
 		final boolean isEdit = ID >= 0;
 
@@ -211,8 +214,10 @@ public class RomManagerActivity extends Graph89ActivityBase
 				public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id)
 				{
 					String value = calcTypeSpinner.getSelectedItem().toString();
-					if (!value.startsWith("-"))
+					String oldTitle = romTitle.getText().toString().trim();
+					if ((!value.startsWith("-")) && (oldTitle.length() == 0 || oldTitle.equals(mCalcTypeStandardTitle)))
 					{
+						mCalcTypeStandardTitle = value;
 						romTitle.setText(value);
 						romTitle.setSelection(value.length());
 					}
