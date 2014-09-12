@@ -57,6 +57,8 @@ public class AboutScreen
 		String text = "Graph 89 - Version: 1.1.3c\n\n" +
 				"Copyright \u00A9 2012-2013, Dritan Hashorva\n" +
 				"www.graph89.com\n\n" +
+				"Source code: https://bitbucket.org/dhashoandroid/graph89-paid\n\n" +
+
 				"TiEmu - Version: 3.0.3\n\n" +
 				"Copyright \u00A9 2000-2001, Thomas Corvazier, Romain Lievin\n" + 
 				"Copyright \u00A9 2001-2003, Romain Lievin\n"+
